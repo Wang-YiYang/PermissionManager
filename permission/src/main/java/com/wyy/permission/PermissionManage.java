@@ -38,6 +38,10 @@ public class PermissionManage {
         requestPermissions(listener, permissions);
     }
 
+    /**
+     * 时间：2016/12/28 21:04
+     * 描述：是否拒绝了权限，并设置了不在提示
+     */
     public boolean isNoAsk(String[] permissions) {
         for (int i = 0; i < permissions.length; i++) {
             if (!ActivityCompat.shouldShowRequestPermissionRationale(mActivity, permissions[i])) {
@@ -49,7 +53,7 @@ public class PermissionManage {
 
     /**
      * 时间：2016/12/27 18:58
-     * 描述：检查是否未授予权限
+     * 描述：获取未被授予的权限
      */
     private List<String> getNoPermissions(String[] permissions) {
         List<String> permissionList = new ArrayList<>();
@@ -63,7 +67,7 @@ public class PermissionManage {
 
     /**
      * 时间：2016/12/27 19:18
-     * 描述：请求权限重载，自己传入请求码
+     * 描述：把请求的权限传到Fragment进行处理
      */
     @TargetApi(value = Build.VERSION_CODES.M)
     private void requestPermissions(@NonNull PermissionRequestListener listener, String[] permissions) {
