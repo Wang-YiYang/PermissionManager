@@ -2,11 +2,12 @@
 
 简化了对运行时权限处理的操作，使用方便简单
 
-1. 在对应的界面实现PermissionRequestListener接口
+### 1. 在对应的界面实现PermissionRequestListener接口
 ```Android
 public class MainActivity extends AppCompatActivity implements PermissionRequestListener{}
 ```
-2. 重写onRequestResult(String[] deniedPermissions)方法
+
+### 2. 重写onRequestResult(String[] deniedPermissions)方法
   ```Android
   @Override
    public void onRequestResult(String[] deniedPermissions) {
@@ -24,7 +25,8 @@ public class MainActivity extends AppCompatActivity implements PermissionRequest
        }
    }
 ```
-3. 开始请求权限
+
+### 3. 开始请求权限
 ```Android
        //定义请求的权限数组
        String[] permissions = {Permissions.CAMERA, Permissions.ACCESS_COARSE_LOCATION, Permissions.READ_SMS};
